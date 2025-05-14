@@ -11,7 +11,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
 # ---------- Config OpenRouter API ----------
-os.environ["OPENAI_API_KEY"] = "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"  # Replace with your OpenRouter key
+os.environ["OPENAI_API_KEY"] = "your_openrouter_api_key"  # Replace with your OpenRouter key
 os.environ["OPENAI_API_BASE"] = "https://openrouter.ai/api/v1"
 
 # ---------- Initialize LangChain LLM ----------
@@ -63,7 +63,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 # ---------- Telegram Bot Launch ----------
 if __name__ == '__main__':
-    application = ApplicationBuilder().token("7502321094:AAELqwMyy4Cq0jBVZCpBEoNy1RGREG4dT_s").build()
+    application = ApplicationBuilder().token("your_telegram_bot_toke").build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
